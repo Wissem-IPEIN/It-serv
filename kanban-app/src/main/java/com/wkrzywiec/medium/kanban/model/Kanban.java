@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,6 +22,8 @@ import java.util.Objects;
         property = "id",
         scope = Kanban.class)
 public class Kanban {
+
+    private static final Logger logger = LoggerFactory.getLogger(Kanban.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,10 +41,11 @@ public class Kanban {
     private List<Task> tasks;
 
     public void addTask(Task task) {
-
+        logger.info("Adding task to kanban: {}", task);
         if (Objects.isNull(tasks)) {
             tasks = new ArrayList<>();
         }
         tasks.add(task);
+        logger.info("Task added successfully: {}", task);
     }
 }

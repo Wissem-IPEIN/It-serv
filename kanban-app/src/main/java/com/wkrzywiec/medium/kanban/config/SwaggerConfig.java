@@ -1,5 +1,7 @@
 package com.wkrzywiec.medium.kanban.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -16,8 +18,11 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    private static final Logger logger = LoggerFactory.getLogger(SwaggerConfig.class);
+
     @Bean
     public Docket api() {
+        logger.info("Initializing Swagger configuration...");
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
@@ -27,6 +32,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo getApiInfo() {
+        logger.info("Setting up API information for Swagger UI...");
         return new ApiInfo(
                 "Kanban REST API",
                 "This is a REST API of Kanban REST API, where you can get/add/remove/modify Kanban board and its task.",

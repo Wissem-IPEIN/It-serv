@@ -42,4 +42,8 @@ import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
   bootstrap: [AppComponent],
   entryComponents: [TaskDialogComponent, KanbanDialogComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log('AppModule initialized'); // Add a log statement for AppModule initialization
+  }
+}

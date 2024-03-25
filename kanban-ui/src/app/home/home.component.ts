@@ -19,25 +19,30 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('Initializing HomeComponent');
     this.retrieveAllKanbanBoards();
   }
 
   openDialogForNewKanban(): void {
+    console.log('Opening dialog for new Kanban board');
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
       kanban: new Kanban()
     };
-    this.dialog.open(KanbanDialogComponent, dialogConfig)
+    this.dialog.open(KanbanDialogComponent, dialogConfig);
   }
 
   private retrieveAllKanbanBoards(): void {
+    console.log('Retrieving all Kanban boards');
     this.kanbanService.retrieveAllKanbanBoards().subscribe(
-
       response => {
+        console.log('Kanban boards retrieved successfully:', response);
         this.kanbanList = response;
+      },
+      error => {
+        console.error('Error retrieving Kanban boards:', error);
       }
-    )
+    );
   }
-
 }

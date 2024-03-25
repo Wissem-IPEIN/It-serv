@@ -12,4 +12,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor() {
+    console.log('AppRoutingModule initialized'); // Add a log statement for AppRoutingModule initialization
+  }
+}
