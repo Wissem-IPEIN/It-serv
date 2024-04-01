@@ -13,8 +13,8 @@ import { TaskService } from '../service/task.service';
 })
 export class TaskDialogComponent implements OnInit {
 
-  dialogTitle: String;
-  kanbanId: String;
+  dialogTitle: string;
+  kanbanId: string;
   task: Task;
 
   form: FormGroup;

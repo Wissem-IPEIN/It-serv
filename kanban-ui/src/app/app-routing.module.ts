@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { KanbanComponent } from './kanban/kanban.component';
+import { MetricsComponent } from './metrics/metrics.component'; // Import MetricsComponent
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'kanbans/:id', component: KanbanComponent}
+  { path: '', component: HomeComponent },
+  { path: 'kanbans/:id', component: KanbanComponent },
+  { path: 'metrics', component: MetricsComponent } // Add route for MetricsComponent
 ];
 
 @NgModule({
@@ -14,6 +16,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
   constructor() {
-    console.log('AppRoutingModule initialized'); // Add a log statement for AppRoutingModule initialization
+    console.log('AppRoutingModule initialized');
   }
 }

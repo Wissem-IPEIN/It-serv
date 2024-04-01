@@ -15,6 +15,7 @@ import { KanbanComponent } from './kanban/kanban.component';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
     HomeComponent,
     KanbanComponent,
     TaskDialogComponent,
-    KanbanDialogComponent
+    KanbanDialogComponent,
+    MetricsComponent
   ],
   imports: [
     BrowserModule,
